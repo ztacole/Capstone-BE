@@ -1,0 +1,21 @@
+{
+  "name": "capstone-backend",
+  "version": "1.0.0",
+  "description": "Backend Express untuk deteksi sampah dengan TensorFlow.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "multer": "^1.4.4",
+    "mysql2": "^3.14.0",
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  },
+  "author": "DontMakeawish",
+  "license": "MIT"
+}

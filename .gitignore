@@ -1,0 +1,5 @@
+# Jangan upload folder ini ke GitHub
+.env
+.DS_Store
+*.log
+node_modules/
