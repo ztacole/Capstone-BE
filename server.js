@@ -27,44 +27,6 @@ const thumbnailStorage = multer.diskStorage({
 });
 const thumbnailUpload = multer({ storage: thumbnailStorage });
 
-// let model;
-
-// // Load model TensorFlow
-// (async () => {
-//   try {
-//     console.log('Loading model...');
-//     const modelPath = `http://localhost:${PORT}/model/model.json`;
-//     model = await tf.loadLayersModel(modelPath);
-//     console.log('Model loaded successfully.');
-//   } catch (err) {
-//     console.error('Failed to load model:', err);
-//   }
-// })();
-
-// // Endpoint prediksi
-// app.post('/predict', upload.single('image'), async (req, res) => {
-//   if (!req.file) {
-//     return res.status(400).json({ error: 'No file uploaded' });
-//   }
-//   try {
-//     const imageBuffer = fs.readFileSync(req.file.path);
-//     const imageTensor = tf.node.decodeImage(imageBuffer, 3)
-//       .resizeNearestNeighbor([224, 224])
-//       .toFloat()
-//       .div(tf.scalar(255))
-//       .expandDims();
-
-//     const prediction = model.predict(imageTensor);
-//     const predictionArray = await prediction.array();
-
-//     fs.unlinkSync(req.file.path);
-//     return res.json({ prediction: predictionArray });
-//   } catch (err) {
-//     console.error(err);
-//     return res.status(500).json({ error: 'Prediction failed' });
-//   }
-// });
-
 // CREATE blog
 app.post('/blogs', thumbnailUpload.single('thumbnail'), (req, res) => {
   const { title, content } = req.body;
