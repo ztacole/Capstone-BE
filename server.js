@@ -1,8 +1,7 @@
 const express = require('express');
 const multer = require('multer');
-const fs = require('fs');
 const path = require('path');
-// const tf = require('@tensorflow/tfjs');
+require('dotenv').config();
 const db = require('./db');
 
 const app = express();
@@ -11,11 +10,8 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use('/model', express.static(path.join(__dirname, 'model')));
 app.use('/blog_thumbnails', express.static(path.join(__dirname, 'blog_thumbnails')));
 
-// Setup multer untuk upload gambar prediksi
-const upload = multer({ dest: 'uploads/' });
 
 // Setup multer untuk upload thumbnail blog
 const thumbnailStorage = multer.diskStorage({
